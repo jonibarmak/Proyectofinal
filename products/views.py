@@ -28,7 +28,6 @@ def list_products(request):
     return render(request,"products_list.html",context=context)
 
 def primer_formulario(request):
-    print(request.method)
     if request.method =="POST":
         Products.objects.create(name=request.POST["name"])
     return render(request,"primer_formulario.html",context={})
