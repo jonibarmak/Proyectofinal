@@ -27,11 +27,6 @@ def list_products(request):
     }
     return render(request,"products_list.html",context=context)
 
-def primer_formulario(request):
-    if request.method =="POST":
-        Products.objects.create(name=request.POST["name"])
-    return render(request,"primer_formulario.html",context={})
-
 def search_products(request):
     search=request.GET["search"]
     products=Products.objects.filter(name__icontains=search)
