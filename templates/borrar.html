@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Borrar producto
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<div style="margin: 10px;">
+<p >esta seguro de borrar las {{product.name}}?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Borrar">
+</form>
+</div>
+
+
+{% endblock %}

@@ -27,13 +27,35 @@ def list_products(request):
     }
     return render(request,"products_list.html",context=context)
 
+def primer_formulario(request):
+    if request.method =="POST":
+        Products.objects.create(name=request.POST["name"])
+    return render(request,"primer_formulario.html",context={})
+
 def search_products(request):
     search=request.GET["search"]
     products=Products.objects.filter(name__icontains=search)
     context={"products":products}
     return render(request,"search_product.html",context=context)
 
+def inicio(request):
 
+    return render(request,"inicio.html")
 
+def borrar_producto(request, id):
+    if request.method == 'GET':
+        product = Products.objects.get(id=id)
+        context = {'product':product}
+        return render(request, 'borrar.html', context=context)
+    elif request.method == 'POST':
+        product = Products.objects.get(id=id)
+        product.delete()
+        return redirect(list_products)
+
+def descripction_product(request, id):
+    if request.method == 'GET':
+        product = Products.objects.get(id=id)
+        context = {'product':product}
+        return render(request, 'detalles.html', context=context)
 
 
