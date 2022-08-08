@@ -1,6 +1,6 @@
 ## Índice
 
-*[Título e imagen de portada](#Título-e-imagen-de-portada)
+*[Título](#Título)
 
 *[Descripción del proyecto](#descripción-del-proyecto)
 
