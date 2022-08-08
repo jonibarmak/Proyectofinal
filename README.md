@@ -20,7 +20,7 @@ Tecnologías utilizadas
 •	Python
 •	Django
 •	HTML
-•	CSS
+
 
 Desarrolladores del proyecto
 •	Jonathan Barmak
