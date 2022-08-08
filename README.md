@@ -10,7 +10,7 @@
 <h1 align="center"> Orange-Shoes </h1>
 
 
-## :hammer:Descripción del proyecto
+## :Descripción del proyecto
 Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá buscar distintos modelos de zapatillas, sus respectivos precios y en el caso de estar interesado con alguna comprar las mismas. 
 
 ## :hammer:Estado del proyecto
