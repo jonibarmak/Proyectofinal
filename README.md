@@ -6,14 +6,14 @@
 
 *[Estado del proyecto](#Estado-del-proyecto)
 
-*[Funcionalidades del proyecto](#Funcionalidades del proyecto)
+*[Funcionalidades del proyecto](#Funcionalidades-del-proyecto)
 
 *[Acceso al proyecto](#acceso-proyecto)
 
 *[Tecnologías utilizadas](#tecnologías-utilizadas)
 
 
-*[Desarrolladores del proyecto](#Desarrolladores del proyecto)
+*[Desarrolladores del proyecto](#Desarrolladores-del-proyecto)
 
 
 <h1 align="center"> Orange-Shoes </h1>
