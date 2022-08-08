@@ -43,7 +43,7 @@ Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportiv
 
 
 ## Desarrolladores del proyecto
-• Jonathan Barmak
-• Joel Ramirez
+| [<width=115><br><sub>Jonathan Barmak</sub>](https://github.com/jonibarmak) |  [width=115><br><sub>Joel Ramirez</sub>]([https://github.com/Fosktrot]|
+| :---: | :---: | :---: |
 
 
