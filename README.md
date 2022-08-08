@@ -20,7 +20,7 @@
 
 
 ## Descripción del proyecto
-Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá buscar distintos modelos de zapatillas, sus respectivos precios y en el caso de estar interesado con alguna comprar las mismas. 
+Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá buscar distintos modelos de zapatillas, sus respectivos precios y en el caso de estar interesado comprar las mismas. 
 
 ## Estado del proyecto
 <h4 align="center">
