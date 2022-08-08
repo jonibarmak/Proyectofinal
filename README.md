@@ -43,7 +43,7 @@ Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportiv
 
 
 ## Desarrolladores del proyecto
-| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Jonathan Barmak</sub>](https://github.com/jonibarmak) |  [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Jpel Ramirez</sub>](https://github.com/Fosktrot)
-| :---: | :---: | :---: |
+• https://github.com/jonibarmak
+• https://github.com/Fosktrot
 
 
