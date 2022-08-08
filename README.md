@@ -29,7 +29,8 @@ Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportiv
 
 ## Funcionalidades del proyecto
 
-- `Funcionalidad 1`: En la Navbar hay un Listado de productos donde figuran todas las zapatillas que comercializamos- `Funcionalidad 2`: Hay un buscador, el cual se puede utilizar para buscar por marca o por producto
+- `Funcionalidad 1`: En la Navbar hay un Listado de productos donde figuran todas las zapatillas que comercializamos 
+- `Funcionalidad 2`: Hay un buscador, el cual se puede utilizar para buscar por marca o por producto
 
 
 ## Acceso al proyecto
