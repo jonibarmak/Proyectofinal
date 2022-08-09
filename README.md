@@ -39,15 +39,15 @@ Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportiv
 
 ## Tecnologías utilizadas
 - Python
-- `Django`
-- `HTML`
-- `CSS`
+- Django
+- HTML
+- CSS
 
 
 
 
 ## Desarrolladores del proyecto
-• https://github.com/jonibarmak
-• https://github.com/Fosktrot
+- https://github.com/jonibarmak
+- https://github.com/Fosktrot
 
 
