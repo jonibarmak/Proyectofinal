@@ -35,6 +35,7 @@ Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportiv
 
 
 ## Acceso al proyecto
+- http://127.0.0.1:8000/products/
 
 
 ## Tecnologías utilizadas
