@@ -16,7 +16,7 @@
 *[Desarrolladores del proyecto](#Desarrolladores-del-proyecto)
 
 
-<h1 align="center" style ="color:Orange "Orange-Shoes> </h1>
+<h1 style ="color:Orange "Orange-Shoes> </h1>
 
 
 ## Descripción del proyecto
