@@ -40,6 +40,8 @@ Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportiv
 •	Python
 •	Django
 •	HTML
+•	CSS
+
 
 
 
