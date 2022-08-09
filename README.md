@@ -31,22 +31,24 @@ Proyecto en desarrollo para generar un ecommerce de venta de zapatillas deportiv
 
 - `Funcionalidad 1`: En la Navbar hay un Listado de productos donde figuran todas las zapatillas que comercializamos 
 - `Funcionalidad 2`: Hay un buscador, el cual se puede utilizar para buscar por marca o por producto
+- `Funcionalidad 3`: Hay una opción para añadir productos. Al selecionar la misma, sale un formulario para ingresar nombre, precio, descripción y stock del producto a añadir
 
 
 ## Acceso al proyecto
+- http://127.0.0.1:8000/products/
 
 
 ## Tecnologías utilizadas
-•	Python
-•	Django
-•	HTML
-•	CSS
+- Python
+- Django
+- HTML
+- CSS
 
 
 
 
 ## Desarrolladores del proyecto
-• https://github.com/jonibarmak
-• https://github.com/Fosktrot
+- Jonathan Barmak - https://github.com/jonibarmak
+- Joel Ramirez - https://github.com/Fosktrot
 
 
