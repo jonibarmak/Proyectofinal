@@ -8,7 +8,11 @@
 
 
     <div style="width: 18rem; margin: 10px;">
-        <img src="https://th.bing.com/th/id/OIP.PIXgPD0UP1WsSUw2Qz2wWAHaHa?w=208&h=208&c=7&r=0&o=5&dpr=1.5&pid=1.7" class="card-img-top" alt="...">
+      {% if product.image %}
+      <img src="{{product.image.url}}"  class="card-img-top" alt="...">
+      {% else %}
+      <img src="https://i0.wp.com/edtechreviews.net/wp-content/uploads/2021/12/coderhouse_logo.png?resize=750%2C750&ssl=1" class="card-img-top" alt="...">
+      {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
           <p class="card-text">Precio: ${{product.price}} </p>  
