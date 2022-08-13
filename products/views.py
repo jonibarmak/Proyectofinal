@@ -5,13 +5,14 @@ from products.forms import Formulario_productos
 
 def create_product(request):
     if request.method=="POST":
-        form=Formulario_productos(request.POST)
+        form=Formulario_productos(request.POST,request.FILES)
         if form.is_valid():
             Products.objects.create(
                 name=form.cleaned_data["name"],
                 description=form.cleaned_data["description"],
                 price=form.cleaned_data["price"],
-                stock=form.cleaned_data["stock"]                
+                stock=form.cleaned_data["stock"],
+                image=form.cleaned_data["image"]                  
             )
             return redirect(list_products)
 
