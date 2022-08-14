@@ -16,8 +16,9 @@ class Products(models.Model):
         verbose_name= "Product" 
         verbose_name_plural= "Products" 
         
-class category(models.Model):
+class Category(models.Model):
     name= models.CharField(max_length=50)
 
-class size(models.Model):
+class Size(models.Model):
     name=models.CharField(max_length=50)
+
