@@ -7,6 +7,7 @@
 
     {% block contenido_que_cambia %}
 
+    <h1 style ="color: blue">Creadores de la web</h1>
 
     {% for person in people %}
 
@@ -17,11 +18,14 @@
         <img src="" class="card-img-top" alt="...">
         {% endif %}      
         <div class="card-body">
-            <h1 class="card-title">{{person.name}}</h1>
+            <h1 class="card-title">{{person.name}} </h1>
             <p class="card-text">{{person.description}}</p>
                                 
     </div>
     </div>
 {% endfor %}
+
+<h1 style ="color: blue">Proyecto</h1>
+<h3>Ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá buscar distintos modelos de zapatillas, sus respectivos precios y en el caso de estar interesado comprar las mismas.</h3>
 
 {% endblock %}
