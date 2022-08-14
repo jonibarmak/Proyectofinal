@@ -4,6 +4,7 @@ from products.models import Products
 from products.forms import Formulario_productos 
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def create_product(request):
     if request.method=="POST":
         form=Formulario_productos(request.POST,request.FILES)
@@ -29,7 +30,7 @@ def list_products(request):
     }
     return render(request,"products_list.html",context=context)
 
-
+@login_required
 def update_product(request, pk):
     if request.method=="POST":
         form=Formulario_productos(request.POST)
@@ -60,7 +61,7 @@ def search_products(request):
     context={"products":products}
     return render(request,"search_product.html",context=context)
 
-
+@login_required
 def borrar_producto(request, id):
     if request.method == 'GET':
         product = Products.objects.get(id=id)

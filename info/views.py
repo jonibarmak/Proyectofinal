@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from info.models import about_us
 from info.forms import Formulario_nosotros
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def route_about(request):
      if request.method=="POST":
         form=Formulario_nosotros(request.POST,request.FILES)
