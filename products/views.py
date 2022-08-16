@@ -25,7 +25,7 @@ def create_product(request):
         return render(request,"new_product.html",context=context)
 
 def list_products(request):
-    products= Products.objects.all()
+    products= Products.objects.all().order_by("-price")
     context={
         "products":products
     }
@@ -107,6 +107,9 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect(tienda)
 
+def get_ordering(self):
+    ordering = self.request.GET.get('ordering', 'precio')
+    return ordering
 
 
     

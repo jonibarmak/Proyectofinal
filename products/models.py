@@ -14,11 +14,15 @@ class Products(models.Model):
     
     class Meta: 
         verbose_name= "Product" 
-        verbose_name_plural= "Products" 
+        verbose_name_plural= "Products"
+        
         
 class Category(models.Model):
     name= models.CharField(max_length=50)
 
 class Size(models.Model):
     name=models.CharField(max_length=50)
+
+class Meta:
+    ordering = ["precio"]
 
