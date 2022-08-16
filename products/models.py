@@ -23,6 +23,4 @@ class Category(models.Model):
 class Size(models.Model):
     name=models.CharField(max_length=50)
 
-class Meta:
-    ordering = ["precio"]
 

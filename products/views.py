@@ -107,9 +107,6 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect(tienda)
 
-def get_ordering(self):
-    ordering = self.request.GET.get('ordering', 'precio')
-    return ordering
 
 
     
