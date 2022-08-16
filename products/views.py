@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from products.models import Products 
 from products.forms import Formulario_productos 
 from django.contrib.auth.decorators import login_required
+from products.Carrito import Carrito
 
 @login_required
 def create_product(request):
@@ -79,4 +80,34 @@ def descripction_product(request, id):
         context = {'product':product}
         return render(request, 'detalles.html', context=context)
 
+def tienda(request):
+    products= Products.objects.all()
+    return render(request,"tienda.html",{'products':products})
+
+def agregar_producto(request,product_id):
+    carrito=Carrito(request)
+    product=Products.objects.get(id=product_id)
+    carrito.agregar(product)
+    return redirect(tienda)
+
+def eliminar_producto(request,product_id):
+    carrito=Carrito(request)
+    product=Products.objects.get(id=product_id)
+    carrito.eliminar(product)
+    return redirect(tienda)
+
+def restar_producto(request,product_id):
+    carrito=Carrito(request)
+    product=Products.objects.get(id=product_id)
+    carrito.restar(product)
+    return redirect(tienda)
+
+def limpiar_carrito(request):
+    carrito=Carrito(request)
+    carrito.limpiar()
+    return redirect(tienda)
+
+
+
+    
 
