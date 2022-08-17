@@ -36,7 +36,7 @@
                                         
                                             <h5 class="card-title">{{product.name}}</h5>
                                             <h6 class="card-text">${{product.price}} </h6>
-                                        <a href="/products/agregar/{{product.id}}/" class="btn btn-primary">Agregar al carrito</a>
+                                        <a href="/products/add-product/{{product.id}}/" class="btn btn-primary">Agregar al carrito</a>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col-4">
-                {% include "carrito.html" %}
+                {% include "cart.html" %}
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from products.models import Products 
 from products.forms import Formulario_productos 
 from django.contrib.auth.decorators import login_required
-from products.Carrito import Carrito
+from products.Cart import Cart
 
 @login_required
 def create_product(request):
@@ -80,32 +80,32 @@ def descripction_product(request, id):
         context = {'product':product}
         return render(request, 'detalles.html', context=context)
 
-def tienda(request):
+def store(request):
     products= Products.objects.all()
-    return render(request,"tienda.html",{'products':products})
+    return render(request,"store.html",{'products':products})
 
-def agregar_producto(request,product_id):
-    carrito=Carrito(request)
+def add_product(request,product_id):
+    cart=Cart(request)
     product=Products.objects.get(id=product_id)
-    carrito.agregar(product)
-    return redirect(tienda)
+    cart.add(product)
+    return redirect(store)
 
-def eliminar_producto(request,product_id):
-    carrito=Carrito(request)
+def delete_product(request,product_id):
+    cart=Cart(request)
     product=Products.objects.get(id=product_id)
-    carrito.eliminar(product)
-    return redirect(tienda)
+    cart.delete(product)
+    return redirect(store)
 
-def restar_producto(request,product_id):
-    carrito=Carrito(request)
+def subtract_product(request,product_id):
+    cart=Cart(request)
     product=Products.objects.get(id=product_id)
-    carrito.restar(product)
-    return redirect(tienda)
+    cart.subtract(product)
+    return redirect(store)
 
-def limpiar_carrito(request):
-    carrito=Carrito(request)
-    carrito.limpiar()
-    return redirect(tienda)
+def clean_cart(request):
+    cart=Cart(request)
+    cart.clean()
+    return redirect(store)
 
 
 
