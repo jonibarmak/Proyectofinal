@@ -62,12 +62,12 @@ def search_products(request):
     context={"products":products}
     return render(request,"search_product.html",context=context)
 
-@login_required
-def borrar_producto(request, id):
+
+def borrar_product(request, id):
     if request.method == 'GET':
         product = Products.objects.get(id=id)
         context = {'product':product}
-        return render(request, 'borrar.html', context=context)
+        return render(request, 'borrar_product.html', context=context)
     elif request.method == 'POST':
         product = Products.objects.get(id=id)
         product.delete()
