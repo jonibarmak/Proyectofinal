@@ -63,11 +63,11 @@ def search_products(request):
     return render(request,"search_product.html",context=context)
 
 
-def borrar_product(request, id):
+def remove_product(request, id):
     if request.method == 'GET':
         product = Products.objects.get(id=id)
         context = {'product':product}
-        return render(request, 'borrar_product.html', context=context)
+        return render(request, 'remove_product.html', context=context)
     elif request.method == 'POST':
         product = Products.objects.get(id=id)
         product.delete()
