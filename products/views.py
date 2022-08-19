@@ -25,11 +25,20 @@ def create_product(request):
         return render(request,"new_product.html",context=context)
 
 def list_products(request):
-    products= Products.objects.all().order_by("-price")
-    context={
-        "products":products
-    }
+    products= Products.objects.all()
+    context={"products":products}
     return render(request,"products_list.html",context=context)
+
+def list_products_highest(request): 
+    products= Products.objects.all().order_by("-price")
+    context={"products":products}
+    return render(request,"products_list_highest.html",context=context)
+
+def list_products_lowest(request): 
+    products= Products.objects.all().order_by("price")
+    context={"products":products}
+    return render(request,"products_list_lowest.html",context=context)
+    
 
 @login_required
 def update_product(request, pk):

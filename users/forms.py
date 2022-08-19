@@ -14,3 +14,9 @@ class User_registration_form(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
 
         help_texts = {k:'' for k in fields} 
+
+class Formulario_profile(forms.Form):
+    user=forms.CharField(max_length=40)
+    phone=forms.CharField(max_length=20)
+    adress=forms.CharField(max_length=200)
+    image=forms.ImageField(required=False)

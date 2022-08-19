@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
-from users.forms import User_registration_form
+from users.forms import User_registration_form, Formulario_profile
+from django.http import HttpResponse
+from users.models import User_profile
+from django.contrib.auth.decorators import login_required
 
 
 def login_request(request):
@@ -41,3 +44,60 @@ def register(request):
     elif request.method == 'GET':
         form=User_registration_form()
         return render(request,"register.html",{'form': form})
+
+def show_profile(request):
+    #profile= User_profile.objects.all()
+    #context={"profile":profile}
+    #return render(request,"show_profile.html",context=context)
+     if request.user.is_authenticated:
+        return HttpResponse(request.user.profile.phone)
+        
+        
+    
+@login_required
+def create_profile(request):
+        if request.method=="POST":
+            form=Formulario_profile(request.POST,request.FILES)
+            if form.is_valid():
+                User_profile.objects.create(
+                user=form.cleaned_data["user"],
+                phone=form.cleaned_data["phone"],
+                adress=form.cleaned_data["adress"],
+                image=form.cleaned_data["image"]                  
+            )
+                return redirect(show_profile)
+       
+        
+        elif request.method=="GET": 
+            form=Formulario_profile()
+            context={"form":form}
+            return render(request,"create_profile.html",context=context) 
+
+
+def update_profile(request,id):
+    if request.method=="POST":
+        form=Formulario_profile(request.POST)
+        if form.is_valid():
+            profile= User_profile.objects.get(id=id)
+            profile.user=form.cleaned_data["user"]
+            profile.phone=form.cleaned_data["phone"]              
+            profile.adress=form.cleaned_data["adress"]
+            profile.save()
+
+            return redirect(show_profile) 
+                             
+            
+    elif request.method=="GET":
+        profile=User_profile.objects.get(id=id)
+        form=Formulario_profile(initial={
+            "user":profile.user,
+            "phone":profile.phone,
+            "adress":profile.adress})
+        context={"form":form}
+        return render(request,"update_profile.html",context=context)
+
+def descripction_profile(request,id):
+    if request.method == 'GET':
+        profile = User_profile.objects.get(id=id)
+        context = {'profile':profile}
+        return render(request, 'detalles_perfil.html', context=context)
