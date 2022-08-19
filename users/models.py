@@ -11,4 +11,3 @@ class User_profile(models.Model):
         return self.user.username + " - profile"
 
 
-
