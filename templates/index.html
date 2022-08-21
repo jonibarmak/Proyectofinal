@@ -1,13 +1,43 @@
-{% extends "base.html" %}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orange-Shoes</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div id="main-container">
+        <header>
+            <div id="menu">
+                <ul>
+                    <li id="logo"><a href="#"><img src="../img\logo.png" style="width: 15rem; margin: 15px;" alt=""></a></li>
+                    <li><a href="/products/store/">Tienda</a></li>
+                    <li><a href="/info/list_us/">Acerca de nosotros</a></li>                               
+                </ul>
+            </div>
+            <main>
+                <div class="text">
+                    <h1>Ecommerce de zapatillas</h1>
+                    <p>
+                        Un lugar, los mejores precios
+                    </p>
+                    <p>                        
+                        <a href="/products/list-products/"><button>Ver los productos</button></a>
+                    </p>
+                </div>
 
-{% block titulo %} 
-Index
-{% endblock %}
-
-{% block contenido_que_cambia %}
-<h1 style ="color:orange">Bienvenido a Orange-Shoes</h1>
-<div class="card" style="width: 30rem; margin: 10px;">
-<img src="https://bolavip.com/__export/1626002640516/sites/bolavip/img/2021/07/11/gettyimages-1328079648_crop1626002639531.jpg_242310155.jpg"  class="card-img-top" alt="...">
-</div>
-
-{% endblock %}
+                <div class="image">
+                    <a href="#"></a><img src="../img/zapas.jpg" width="300" />
+                </div>
+            </main>
+        </header>        
+        <div class="section" id="acerca de nosotros">            
+            </div>            
+                <footer>
+             © Derechos Reservados
+        </footer>
+    </div>
+</body>
+</html>
