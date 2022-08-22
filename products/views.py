@@ -1,13 +1,14 @@
 from django import forms
 from django.shortcuts import redirect, render
-from products.models import Products 
+from products.models import Products, Brand
 from products.forms import Formulario_productos 
 from django.contrib.auth.decorators import login_required
 from products.Cart import Cart
 
 @login_required
 def create_product(request):
-    if request.method=="POST":
+    if request.user.is_superuser:
+     if request.method=="POST":
         form=Formulario_productos(request.POST,request.FILES)
         if form.is_valid():
             Products.objects.create(
@@ -19,10 +20,14 @@ def create_product(request):
             )
             return redirect(list_products)
 
-    elif request.method=="GET":
+     elif request.method=="GET":
         form=Formulario_productos()
         context={"form":form}
         return render(request,"new_product.html",context=context)
+    
+    else:
+        return redirect (list_products)
+
 
 def list_products(request):
     products= Products.objects.all()
@@ -42,7 +47,8 @@ def list_products_lowest(request):
 
 @login_required
 def update_product(request, pk):
-    if request.method=="POST":
+    if request.user.is_superuser:
+     if request.method=="POST":
         form=Formulario_productos(request.POST)
         if form.is_valid():
             product= Products.objects.get(id=pk)
@@ -55,7 +61,7 @@ def update_product(request, pk):
             return redirect(list_products) 
                              
             
-    elif request.method=="GET":
+     elif request.method=="GET":
         product=Products.objects.get(id=pk)
         form=Formulario_productos(initial={
             "name":product.name,
@@ -64,6 +70,8 @@ def update_product(request, pk):
             "stock":product.stock})
         context={"form":form}
         return render(request,"update_product.html",context=context)
+    else:
+        return redirect (list_products)
 
 def search_products(request):
     search=request.GET["search"]
@@ -72,15 +80,20 @@ def search_products(request):
     return render(request,"search_product.html",context=context)
 
 
+
 def remove_product(request, id):
-    if request.method == 'GET':
+    if request.user.is_superuser:
+     if request.method == 'GET':
         product = Products.objects.get(id=id)
         context = {'product':product}
         return render(request, 'remove_product.html', context=context)
-    elif request.method == 'POST':
+     elif request.method == 'POST':
         product = Products.objects.get(id=id)
         product.delete()
         return redirect(list_products)
+    
+    else:
+        return redirect (list_products)
 
 
 def descripction_product(request, id):

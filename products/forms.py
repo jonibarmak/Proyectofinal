@@ -6,3 +6,4 @@ class Formulario_productos(forms.Form):
     description=forms.CharField(max_length=200)
     stock=forms.IntegerField()
     image=forms.ImageField(required=False)
+   

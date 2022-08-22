@@ -1,8 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
-
 from django import forms
+from .models import User_profile 
 
 class User_registration_form(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -15,8 +14,9 @@ class User_registration_form(UserCreationForm):
 
         help_texts = {k:'' for k in fields} 
 
-class Formulario_profile(forms.Form):
+class Profile_Form(forms.Form):
     user=forms.CharField(max_length=40)
-    phone=forms.CharField(max_length=20)
-    adress=forms.CharField(max_length=200)
+    name=forms.CharField(max_length=30)
+    lastname=forms.CharField(max_length=50)
     image=forms.ImageField(required=False)
+

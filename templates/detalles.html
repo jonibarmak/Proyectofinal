@@ -13,14 +13,23 @@
       {% else %}
       <img src="" class="card-img-top" alt="...">
       {% endif %}
+      {% if user.is_superuser %}
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
           <h6 class="card-text">${{product.price}} </h6>  
           <p class="card-text">Stock: {{product.stock}}</p>   
           <p class="card-text">Descripcion: {{product.description}}</p>
 
+          
           <a href="/products/update-product/{{product.id}}/" class="btn btn-primary">Editar</a>
           <a href="/products/remove-product/{{product.id}}/" class="btn btn-primary">Borrar</a>
+          {% else %}
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <h6 class="card-text">${{product.price}} </h6>  
+            <p class="card-text">Stock: {{product.stock}}</p>   
+            <p class="card-text">Descripcion: {{product.description}}</p>
+            {% endif %}
         </div>
       </div>
 

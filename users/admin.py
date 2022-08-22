@@ -4,7 +4,7 @@ from users.models import User_profile
 
 @admin.register(User_profile)
 class User_profile_admin(admin.ModelAdmin):
-    list_display=["user","phone","adress","image"]
+    list_display=["user","name","lastname","image"]
 
 
 

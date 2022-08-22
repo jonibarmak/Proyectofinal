@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def route_about(request):
+    if request.user.is_superuser:
      if request.method=="POST":
         form=Formulario_nosotros(request.POST,request.FILES)
         if form.is_valid():
@@ -18,6 +19,9 @@ def route_about(request):
         form=Formulario_nosotros()
         context={"form":form}
         return render(request,"route_about.html",context=context)
+    else:
+        return redirect(list_us)
+
 
 def list_us(request):
     people= about_us.objects.all()

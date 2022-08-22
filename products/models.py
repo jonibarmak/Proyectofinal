@@ -1,4 +1,6 @@
+from tkinter import CASCADE
 from django.db import models
+
 
 class Products(models.Model):
     name= models.CharField(max_length=40)
@@ -8,8 +10,8 @@ class Products(models.Model):
     creation_date=models.DateField(auto_now_add=True,null=True,blank=True)
     stock=models.IntegerField()
     image=models.ImageField(upload_to="products/",null=True,blank=True)
-
-    def __str__(self):
+   
+    def __str__(self): 
         return self.name 
     
     class Meta: 
@@ -20,7 +22,7 @@ class Products(models.Model):
 class Category(models.Model):
     name= models.CharField(max_length=50)
 
-class Size(models.Model):
-    name=models.CharField(max_length=50)
+class Brand(models.Model):
+    name=models.CharField(max_length=100)
 
 
