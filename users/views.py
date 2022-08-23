@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
-from users.forms import User_registration_form
+from users.forms import User_registration_form,Usereditform
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
@@ -52,18 +52,26 @@ def show_profile(request):
 def edit_profile(request):
     user=request.user
     if request.method == "POST":
-        form=User_registration_form(request.POST)
+        form=Usereditform(request.POST)
         if form.is_valid():
             user.email=form.cleaned_data["email"]
             user.password1=form.cleaned_data["password1"]
             user.password2=form.cleaned_data["password2"]
             user.save()
-        return render(request, "index.html")
-    else:
-        form=User_registration_form(initial={
+            
+            return render(request,"index.html")
+        else:
+            return HttpResponse(f"El formulario no es válido")
+        
+
+    elif request.method=="GET":
+        form=Usereditform(initial={
             "username":user.username,
-            "email":user.email})
-        return render(request,"edit_profile.html",{"form":form,"user":user})
+            "email":user.email,
+             })
+        return render(request,"edit_profile.html",{"form":form})
+
+    
 
 
 
