@@ -15,7 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATICFILES_DIRS=['C:/Users/joey_/Desktop/Proyectofinal/static']
+STATICFILES_DIRS=['static']
 
 # Application definition
 
