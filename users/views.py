@@ -60,9 +60,7 @@ def edit_profile(request):
             user.save()
             
             return render(request,"index.html")
-        else:
-            return HttpResponse(f"El formulario no es válido")
-        
+       
 
     elif request.method=="GET":
         form=Usereditform(initial={
