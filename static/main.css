@@ -54,6 +54,7 @@ header{
 #main-container header main .text p{   
     font-size: 20px;
     padding: 20px 0;
+    margin-left: 1%;
 }
 button{
     background-color: green;
@@ -90,14 +91,14 @@ button:hover{
     width: 500px;
 }
 #main-container .section .layout-left .image{
-    width: 770px;
+    width: 700px;
     text-align: right;
 }
 #main-container .section .layout-right .text{
     width: 500px;
 }
 #main-container .section .layout-right .image{
-    width: 770px;
+    width: 600px;
     text-align: center;
 }
 footer{
