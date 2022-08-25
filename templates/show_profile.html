@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+    {% block titulo %}
+ Perfil
+
+    {% endblock %}
+
+    {% block contenido_que_cambia %}
+      
+    
+   
+
+    <div class="card" style="width: 18rem; margin: 10px;">
+
+      
+            
+        <div class="card-body">
+          <h5 class="card-title">Email: {{user.email}}</h5>
+          <h5 class="card-title">Nombre: {{user.first_name}}</h5>
+          <h5 class="card-title">Apellido: {{user.last_name}}</h5>
+         
+          
+        
+                                
+
+        <a href="/users/edit-profile/" class="btn btn-primary">Editar perfil</a>
+        </div>
+      </div>
+
+
+
+
+{% endblock %}
