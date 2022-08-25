@@ -101,7 +101,8 @@ def descripction_product(request, id):
         product = Products.objects.get(id=id)
         context = {'product':product}
         return render(request, 'detalles.html', context=context)
-
+        
+@login_required
 def store(request):
     products= Products.objects.all()
     return render(request,"store.html",{'products':products})
