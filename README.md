@@ -1,4 +1,4 @@
-<img width="200" alt="logo" src="https://user-images.githubusercontent.com/109324736/186760649-3a14f205-2d6f-44c6-8ca8-68301c802a77.png">
+<img width="100" alt="logo" src="https://user-images.githubusercontent.com/109324736/186760649-3a14f205-2d6f-44c6-8ca8-68301c802a77.png">
 
 ## Índice
 
