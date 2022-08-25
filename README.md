@@ -36,7 +36,7 @@ Ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá bus
 
 
 ## Acceso al proyecto
-- http://127.0.0.1:8000/products/
+- http://127.0.0.1:8000/
 
 
 ## Tecnologías utilizadas
