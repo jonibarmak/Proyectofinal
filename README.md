@@ -4,8 +4,6 @@
 
 *[Descripción del proyecto](#descripción-del-proyecto)
 
-*[Estado del proyecto](#Estado-del-proyecto)
-
 *[Funcionalidades del proyecto](#Funcionalidades-del-proyecto)
 
 *[Acceso al proyecto](#acceso-proyecto)
