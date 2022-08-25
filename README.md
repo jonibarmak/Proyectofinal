@@ -15,7 +15,8 @@
 
 
 <h1 align="center"> Orange-Shoes </h1> 
-![](Beers.png)
+
+<img width="576" alt="logo" src="https://user-images.githubusercontent.com/109324736/186760649-3a14f205-2d6f-44c6-8ca8-68301c802a77.png">
 
 
 ## Descripción del proyecto
