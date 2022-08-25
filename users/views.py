@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
-from users.forms import User_registration_form,Usereditform
+from users.forms import User_registration_form,Usereditform,User_profile_Form
 from django.contrib.auth.decorators import login_required
 from .models import User_profile
 
@@ -47,37 +47,56 @@ def register(request):
 
 @login_required
 def show_profile(request):
-    user=request.user
-    form=Usereditform(initial={
-            "email":user.email})
-    return render(request,"show_profile.html",{"form":form})
+    profile = get_object_or_404(User_profile,user=request.user)
+    form = User_profile_Form(instance=profile) 
+    context = {'form':form}         
+    return render(request,"show_profile.html",context)
+
+
+@login_required
+def create_profile(request):
+    if request.method=='GET':
+        form = User_profile_Form()
+        context = {
+        'form' : form,
+        }
+    else:
+        form = User_profile_Form(request.POST, request.FILES)
+        if form.is_valid():
+            User_profile.objects.create(
+                    user = request.user,
+                    name = form.cleaned_data['name'],
+                    lastname = form.cleaned_data['lastname'],
+                    email = form.cleaned_data['email'],
+                    image = form.cleaned_data['image']
+            )
+            return render(request,"index.html")
+    return render(request,'create_profile.html',context)
 
 @login_required
 def edit_profile(request):
-    user=request.user
-    if request.method == "POST":
-        form=Usereditform(request.POST,request.FILES)
-        if form.is_valid():            
-            user.email=form.cleaned_data["email"]
-            user.password1=form.cleaned_data["password1"]
-            user.password2=form.cleaned_data["password2"]
-            user.first_name=form.cleaned_data["first_name"]
-            user.last_name=form.cleaned_data["last_name"]
-            user.save()
-                                       
+    profile = get_object_or_404(User_profile,user=request.user)
+    if request.method == 'GET':
+        form = User_profile_Form(instance=profile)
+        context = {'form':form,'profile':profile}
+        return render (request,'edit_profile.html',context)
+    else:
+        form = User_profile_Form(request.POST,request.FILES,instance=profile)
+        if form.is_valid():
+            profile.save()
             return render(request,"index.html")
-       
 
-    else: 
-        form=Usereditform(initial={
-            "email":user.email,
-            "first_name":user.first_name,
-            "last_name":user.last_name
-            })
-        return render(request,"edit_profile.html",{"form":form})
-
-
-
+@login_required
+def delete_profile(request):
+    profile = get_object_or_404(User_profile,user=request.user)
+    if request.method == 'GET':
+        mensaje = 'Esta por borrar el perfil'
+        form = User_profile_Form(instance=profile)
+        context = {'form':form,'mensaje':mensaje}
+        return render (request,'delete_profile.html',context)
+    else:
+        profile.delete()
+        return render(request,"index.html")
 
 
 

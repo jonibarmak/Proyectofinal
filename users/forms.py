@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 from .models import User_profile 
+from django.forms import ModelForm
 
 class User_registration_form(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -26,6 +27,8 @@ class Usereditform(UserCreationForm):
     last_name=forms.CharField(label='Apellido')
     
     
+    
+    
 
     class Meta:
         model = User
@@ -34,3 +37,7 @@ class Usereditform(UserCreationForm):
         help_texts = {k:'' for k in fields} 
 
 
+class User_profile_Form(ModelForm):
+    class Meta:
+        model = User_profile
+        fields = ['name','lastname','email','image']

@@ -1,5 +1,5 @@
 {% block titulo %}
-Perfil
+Eliminar perfil
 {% endblock %}
 
 {% block contenido_que_cambia %}
@@ -10,13 +10,8 @@ Perfil
     {{form.as_table}}
 </table> 
 
-<a href="{% url 'edit-profile'  %}" class="btn btn-primary">Editar perfil</a>
-<a href="{% url 'delete-profile'  %}" class="btn btn-primary">Eliminar perfil</a>
+<p><input type="submit" value="Eliminar"></p>
 
 </form>
-
-
-
-
 
 {% endblock %}
