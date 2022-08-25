@@ -14,7 +14,8 @@
 *[Desarrolladores del proyecto](#Desarrolladores-del-proyecto)
 
 
-<h1 align="center"> Orange-Shoes </h1>
+<h1 align="center"> Orange-Shoes </h1> 
+![](Beers.png)
 
 
 ## Descripción del proyecto
