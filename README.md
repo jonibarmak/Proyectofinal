@@ -25,7 +25,7 @@ Ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá bus
 
 ## Funcionalidades del proyecto
 
-- `Funcionalidad 1`: En la Navbar hay un Listado de productos donde figuran todas las zapatillas que comercializamos. Se pueden ordenar los productos por precio de mayor a menor o viceversa. 
+- `Funcionalidad 1`: En la Navbar hay una opción para ir al Listado de productos donde figuran todas las zapatillas. Se pueden ordenar por precio de mayor a menor o viceversa. 
 - `Funcionalidad 2`: Hay un buscador, el cual se puede utilizar para buscar por marca o por producto.
 - `Funcionalidad 3`: Hay una opción para añadir productos (solo el Admin puede añadir productos). Al selecionar la misma, sale un formulario para ingresar nombre, precio, descripción y stock del producto a añadir.
 - `Funcionalidad 4`: Hay una opción de Tienda, en la cual se puede añadir productos al carrito. Se necesita haber iniciado sesión para poder realizarlo.
