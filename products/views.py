@@ -1,9 +1,10 @@
 from django import forms
 from django.shortcuts import redirect, render
-from products.models import Products, Brand
-from products.forms import Formulario_productos 
+from products.models import Products
+from products.forms import Formulario_productos
 from django.contrib.auth.decorators import login_required
 from products.Cart import Cart
+
 
 @login_required
 def create_product(request):
@@ -16,7 +17,8 @@ def create_product(request):
                 description=form.cleaned_data["description"],
                 price=form.cleaned_data["price"],
                 stock=form.cleaned_data["stock"],
-                image=form.cleaned_data["image"]                  
+                image=form.cleaned_data["image"],
+                #brand=form.cleaned_data["brand"]                  
             )
             return redirect(list_products)
 
@@ -43,7 +45,8 @@ def list_products_lowest(request):
     products= Products.objects.all().order_by("price")
     context={"products":products}
     return render(request,"products_list_lowest.html",context=context)
-    
+
+   
 
 @login_required
 def update_product(request, pk):
@@ -55,7 +58,8 @@ def update_product(request, pk):
             product.name=form.cleaned_data["name"]
             product.description=form.cleaned_data["description"]              
             product.price=form.cleaned_data["price"]
-            product.stock=form.cleaned_data["stock"]   
+            product.stock=form.cleaned_data["stock"]  
+            #product.brand=form.cleaned_data["brand"]  
             product.save()
 
             return redirect(list_products) 
@@ -67,7 +71,8 @@ def update_product(request, pk):
             "name":product.name,
             "price":product.price,
             "description":product.description,
-            "stock":product.stock})
+            "stock":product.stock,
+            "brand":product.brand})
         context={"form":form}
         return render(request,"update_product.html",context=context)
     else:
@@ -101,7 +106,7 @@ def descripction_product(request, id):
         product = Products.objects.get(id=id)
         context = {'product':product}
         return render(request, 'detalles.html', context=context)
-        
+
 @login_required
 def store(request):
     products= Products.objects.all()

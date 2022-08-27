@@ -1,3 +1,4 @@
+from turtle import home
 from django.urls import path
 from products.views import list_products, create_product,search_products,descripction_product,remove_product,update_product
 from .views import add_product, delete_product, clean_cart, subtract_product, store,list_products_highest,list_products_lowest  
@@ -16,6 +17,6 @@ urlpatterns = [
     path('delete-product/<int:product_id>/', delete_product, name='Del'),
     path('subtract-product/<int:product_id>/', subtract_product, name='Sub'),
     path('clean-cart/', clean_cart, name='CLS'),
-    
+
    
 ]
