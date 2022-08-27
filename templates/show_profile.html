@@ -5,8 +5,12 @@ Perfil
 
 {% block contenido_que_cambia %}
 
+{% if user.profile.image %}
+      <img src="{{user.profile.image.url}}"  style="width: 10rem; " alt="">
+      {% else %}
 <form action="" method="POST" enctype="multipart/form-data">
-{% csrf_token %}
+    {% endif %}
+
 <table>
     {{form.as_table}}
 </table> 
