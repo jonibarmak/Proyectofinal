@@ -18,7 +18,8 @@ def create_product(request):
                 price=form.cleaned_data["price"],
                 stock=form.cleaned_data["stock"],
                 image=form.cleaned_data["image"],
-                #brand=form.cleaned_data["brand"]                  
+                brand=form.cleaned_data["brand"]
+                              
             )
             return redirect(list_products)
 
@@ -59,7 +60,7 @@ def update_product(request, pk):
             product.description=form.cleaned_data["description"]              
             product.price=form.cleaned_data["price"]
             product.stock=form.cleaned_data["stock"]  
-            #product.brand=form.cleaned_data["brand"]  
+            product.brand=form.cleaned_data["brand"] 
             product.save()
 
             return redirect(list_products) 
