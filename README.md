@@ -27,8 +27,8 @@ Ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá bus
 
 ## Funcionalidades del proyecto
 
-- `acceso al super-user`: username: useradmin
-                          Password:	admin123
+- `acceso al super-user`: -username: useradmin
+                          -Password:	admin123
 
 - `Funcionalidad 1`: En la Navbar hay una opción para ir al Listado de productos donde figuran todas las zapatillas. Se pueden ordenar por precio de mayor a menor o viceversa. 
 - `Funcionalidad 2`: Hay un buscador, el cual se puede utilizar para buscar por marca o por producto.
