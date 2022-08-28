@@ -22,8 +22,13 @@
 ## Descripción del proyecto
 Ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá buscar distintos modelos de zapatillas, sus respectivos precios y añadir los productos al carrito de compras. 
 
+- `video de demostracion`: https://www.youtube.com/watch?v=0y2Zu3PTDmI&t=188s
+
 
 ## Funcionalidades del proyecto
+
+- `acceso al super-user`: username: useradmin
+                          Password:	admin123
 
 - `Funcionalidad 1`: En la Navbar hay una opción para ir al Listado de productos donde figuran todas las zapatillas. Se pueden ordenar por precio de mayor a menor o viceversa. 
 - `Funcionalidad 2`: Hay un buscador, el cual se puede utilizar para buscar por marca o por producto.
