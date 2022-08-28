@@ -10,7 +10,7 @@ from products.Cart import Cart
 def create_product(request):                                                        #funcion de creacion de productos
     if request.user.is_superuser:
      if request.method=="POST":
-        form=Formulario_productos(request.POST,request.FILES)
+        form=Formulario_productosrequest.FILES(request.POST,)
         if form.is_valid():
             Products.objects.create(
                 name=form.cleaned_data["name"],
@@ -52,7 +52,7 @@ def list_products_lowest(request):                                              
 def update_product(request, pk):                                                    #funcion para actualizar informacion del profucto
     if request.user.is_superuser:
      if request.method=="POST":
-        form=Formulario_productos(request.POST)
+        form=Formulario_productos(request.POST,request.FILES)
         if form.is_valid():
             product= Products.objects.get(id=pk)
             product.name=form.cleaned_data["name"]
@@ -60,6 +60,7 @@ def update_product(request, pk):                                                
             product.price=form.cleaned_data["price"]
             product.stock=form.cleaned_data["stock"]  
             product.brand=form.cleaned_data["brand"] 
+            product.image=form.cleaned_data["image"] 
             product.save()
 
             return redirect(list_products) 
@@ -72,6 +73,7 @@ def update_product(request, pk):                                                
             "price":product.price,
             "description":product.description,
             "stock":product.stock,
+            "image":product.image,
             "brand":product.brand})
         context={"form":form}
         return render(request,"update_product.html",context=context)
