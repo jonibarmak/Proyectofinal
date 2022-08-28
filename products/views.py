@@ -18,8 +18,7 @@ def create_product(request):                                                    
                 price=form.cleaned_data["price"],                                   #precio
                 stock=form.cleaned_data["stock"],                                   #stock
                 image=form.cleaned_data["image"],                                   #imagen
-                brand=form.cleaned_data["brand"]                                    #marca
-                              
+                brand=form.cleaned_data["brand"]                                    #marca                
             )
             return redirect(list_products)
 

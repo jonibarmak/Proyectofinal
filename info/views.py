@@ -4,7 +4,7 @@ from info.forms import Formulario_nosotros
 from django.contrib.auth.decorators import login_required
 
 @login_required
-def route_about(request):
+def route_about(request):                                                   #añadir a "Acerca de nosotros"
     if request.user.is_superuser:
      if request.method=="POST":
         form=Formulario_nosotros(request.POST,request.FILES)
@@ -23,7 +23,7 @@ def route_about(request):
         return redirect(list_us)
 
 
-def list_us(request):
+def list_us(request):                                                       #mostrar en "Acerca de nosotros"
     people= about_us.objects.all()
     context={
         "people":people
