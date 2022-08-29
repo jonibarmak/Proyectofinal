@@ -5,10 +5,11 @@ Perfil
 
 {% block contenido_que_cambia %}
 
-<div class="card" style="width: 20rem; margin: 12px;">
+<div class="card" class="text-center" style="width: 20rem; margin: 12px;">
 
         {% if user.profile.image %}
-      <img src="{{user.profile.image.url}}"  style="width: 10rem; " alt="">
+        
+      <img src="{{user.profile.image.url}}"   width: 10rem margin: 12px>
       {% endif %}
       <div class="card-body">
         <h5 class="card-title">Nombre: {{user.profile.name}}</h5>
