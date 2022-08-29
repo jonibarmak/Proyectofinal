@@ -22,7 +22,7 @@
 ## Descripción del proyecto
 Ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá buscar distintos modelos de zapatillas, sus respectivos precios y añadir los productos al carrito de compras. 
 
-- `Video de demostracion`: https://www.youtube.com/watch?v=0y2Zu3PTDmI&t=188s
+- `Video de demostración`: https://www.youtube.com/watch?v=0y2Zu3PTDmI&t=188s
 
 - `Acceso al super-user`: -Username: useradmin
                           -Password: admin123
