@@ -4,6 +4,7 @@ from products.models import Products
 from products.forms import Formulario_productos
 from django.contrib.auth.decorators import login_required
 from products.Cart import Cart
+from django.contrib import messages
 
 
 @login_required
@@ -85,6 +86,7 @@ def search_products(request):                                                   
     products=Products.objects.filter(name__icontains=search)
     context={"products":products}
     return render(request,"search_product.html",context=context)
+            
 
 
 
