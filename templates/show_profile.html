@@ -5,23 +5,23 @@ Perfil
 
 {% block contenido_que_cambia %}
 
-{% if user.profile.image %}
+<div class="card" style="width: 20rem; margin: 12px;">
+
+        {% if user.profile.image %}
       <img src="{{user.profile.image.url}}"  style="width: 10rem; " alt="">
-      {% else %}
-<form action="" method="POST" enctype="multipart/form-data">
-    {% endif %}
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">Nombre: {{user.profile.name}}</h5>
+        <h5 class="card-title">Apellido: {{user.profile.lastname}}</h5>
+        <h5 class="card-title">Email: {{user.profile.email}}</h5>
+      
+      
+                       
 
-<table>
-    {{form.as_table}}
-</table> 
-
-<a href="{% url 'edit-profile'  %}" class="btn btn-primary">Editar perfil</a>
-<a href="{% url 'delete-profile'  %}" class="btn btn-primary">Eliminar perfil</a>
-
-</form>
-
-
-
-
+        <a href="{% url 'edit-profile'  %}" class="btn btn-primary">Editar perfil</a>
+        <a href="{% url 'delete-profile'  %}" class="btn btn-primary">Eliminar perfil</a>
+        
+      </div>
+    </div>
 
 {% endblock %}
