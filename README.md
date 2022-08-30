@@ -31,7 +31,7 @@ Ecommerce de venta de zapatillas deportivas y urbanas. En el mismo se podrá bus
 ## Funcionalidades del proyecto
 - `Funcionalidad 1`: En la Navbar hay una opción para ir al Listado de productos donde figuran todas las zapatillas. Se pueden ordenar por precio de mayor a menor o viceversa. 
 - `Funcionalidad 2`: Hay un buscador, el cual se puede utilizar para buscar por marca o por producto.
-- `Funcionalidad 3`: Hay una opción para añadir productos (solo el Admin puede añadir productos). Al selecionar la misma, sale un formulario para ingresar nombre, precio, descripción y stock del producto a añadir.
+- `Funcionalidad 3`: Hay una opción para añadir productos (solo el Admin puede añadir productos). Al selecionar la misma, sale un formulario para ingresar nombre, precio, descripción, stock y marca del producto a añadir.
 - `Funcionalidad 4`: Hay una opción de Tienda, en la cual se puede añadir productos al carrito. Se necesita haber iniciado sesión para poder realizarlo.
 - `Funcionalidad 5`: Con el botón Register, se puede registrar un usuario. Debe ingresar Nombre de usuario, email, contraseña, confirmación de contraseña, nombre y apellido.
 - `Funcionalidad 6`: Una vez registrado se puede iniciar sesión con el botón de Login. Se debe ingresar nombre de usuario y contraseña
